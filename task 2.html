@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 2 - RAM Simulation</title>
+</head>
+
+<body style="text-align:center; font-family:Arial; margin-top:50px;">
+
+<h2>RAM Read/Write Simulator</h2>
+
+<input id="addr" placeholder="Address (0-9)">
+<input id="data" placeholder="Data">
+
+<button onclick="write()">Write</button>
+<button onclick="read()">Read</button>
+
+<p id="out"></p>
+
+<script>
+let ram = {};
+
+function write() {
+  let a = document.getElementById("addr").value;
+  let d = document.getElementById("data").value;
+
+  ram[a] = d;
+  document.getElementById("out").innerText = "Written Successfully ✔";
+}
+
+function read() {
+  let a = document.getElementById("addr").value;
+  document.getElementById("out").innerText =
+    "Data: " + (ram[a] || "Empty");
+}
+</script>
+
+</body>
+</html>

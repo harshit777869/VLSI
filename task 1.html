@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 1 - ALU Simulation</title>
+
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    input, select, button { padding: 10px; margin: 5px; }
+    .box { margin-top: 20px; }
+  </style>
+</head>
+
+<body>
+
+<h2>ALU Simulator (Add, Sub, AND, OR, NOT)</h2>
+
+<input id="a" placeholder="A value">
+<input id="b" placeholder="B value">
+
+<select id="op">
+  <option value="add">ADD</option>
+  <option value="sub">SUB</option>
+  <option value="and">AND</option>
+  <option value="or">OR</option>
+  <option value="not">NOT A</option>
+</select>
+
+<button onclick="calc()">Compute</button>
+
+<div class="box">
+  <h3 id="res"></h3>
+</div>
+
+<script>
+function calc() {
+  let a = parseInt(document.getElementById("a").value);
+  let b = parseInt(document.getElementById("b").value);
+  let op = document.getElementById("op").value;
+
+  let r;
+
+  if (op === "add") r = a + b;
+  else if (op === "sub") r = a - b;
+  else if (op === "and") r = a & b;
+  else if (op === "or") r = a | b;
+  else if (op === "not") r = ~a;
+
+  document.getElementById("res").innerText = "Result: " + r;
+}
+</script>
+
+</body>
+</html>

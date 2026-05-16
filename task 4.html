@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 4 - FIR Filter</title>
+</head>
+
+<body style="text-align:center; font-family:Arial; margin-top:50px;">
+
+<h2>FIR Filter Simulation (3 Tap)</h2>
+
+<input id="x" placeholder="Input Signal">
+
+<button onclick="filter()">Process</button>
+
+<p id="out"></p>
+
+<script>
+let x1 = 0, x2 = 0;
+
+function filter() {
+  let x = parseInt(document.getElementById("x").value);
+
+  let y = (x * 1) + (x1 * 2) + (x2 * 1);
+
+  x2 = x1;
+  x1 = x;
+
+  document.getElementById("out").innerText =
+    "Output: " + y;
+}
+</script>
+
+</body>
+</html>
